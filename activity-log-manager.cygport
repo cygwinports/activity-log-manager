@@ -1,7 +1,7 @@
 inherit gnome2
 
 NAME="activity-log-manager"
-VERSION=0.9.4
+VERSION=0.9.7
 RELEASE=1
 CATEGORY="GNOME"
 SUMMARY="Passive event plugins for Zeitgeist daemon"
@@ -11,7 +11,11 @@ It makes this information readily available for other applications to use. It
 is able to establish relationships between items based on similarity and usage
 patterns."
 HOMEPAGE="http://zeitgeist-project.com/"
-SRC_URI="http://launchpad.net/${NAME}/${PV[1]}.${PV[2]}/${PV}/+download/${NAME}-${VERSION}.tar.gz"
-PATCH_URI="0.9.4-install-data.patch"
+SRC_URI="http://launchpad.net/${NAME}/${VERSION%.*}/${VERSION}/+download/${NAME}-${VERSION}.tar.xz"
+PATCH_URI="0.9.7-export-dynamic.patch"
+
+# force vala regeneration to disable Ubuntu-specific features
+DISTCLEANFILES="src/activity-log-manager.c"
+DIFF_EXCLUDES="*.c"
 
 MAKEOPTS+=" almdocdir= "

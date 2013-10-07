@@ -1,0 +1,11 @@
+--- origsrc/activity-log-manager-0.9.7/src/Makefile.am	2013-07-10 01:28:23.000000000 -0500
++++ src/activity-log-manager-0.9.7/src/Makefile.am	2013-10-07 17:37:21.532984300 -0500
+@@ -119,7 +119,7 @@ endif
+ 
+ 
+ activity_log_manager_LDFLAGS = \
+-	-Wl,--export-dynamic
++	-export-dynamic
+ libactivity_log_manager_la_LDFLAGS = -module -avoid-version
+ 
+ activity_log_manager_LDADD = \
